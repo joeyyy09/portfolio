@@ -1,0 +1,338 @@
+:root {
+  --bg: #000000;
+  --text: #9a9a96;
+  --text-strong: #f2f2f0;
+  --text-faint: #6b6b67;
+  /* fc barcelona blaugrana — garnet + blau (lifted for dark bg) */
+  --accent: #d11a4f;
+  --accent-blue: #2f6fd6;
+  --line: #1e1e20;
+  --measure: 46rem;
+  --mono: var(--font-mono-loaded), ui-monospace, "SF Mono", SFMono-Regular,
+    Menlo, Consolas, "Liberation Mono", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 15px;
+  line-height: 1.85;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: var(--text-strong);
+  text-decoration: none;
+  border-bottom: 1px solid #444;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.wrap {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: clamp(3.5rem, 12vh, 8rem) clamp(1.4rem, 6vw, 3rem) 6rem;
+}
+
+.measure {
+  max-width: 34rem;
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--text-faint);
+  margin: 0 0 1.6rem;
+}
+
+h1 {
+  font-size: clamp(1.9rem, 6vw, 2.6rem);
+  font-weight: 500;
+  color: var(--text-strong);
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+  margin: 0 0 0.7rem;
+}
+
+.tagline {
+  color: var(--accent-blue);
+  font-size: 13px;
+  letter-spacing: 1px;
+  margin: 0 0 2rem;
+}
+
+.lead {
+  color: var(--text);
+  margin: 0 0 1.1rem;
+}
+
+.rule {
+  height: 1px;
+  background: var(--line);
+  border: 0;
+  margin: clamp(3rem, 8vh, 5rem) 0;
+}
+
+.section {
+  position: relative;
+}
+
+.section-label {
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: var(--text-faint);
+  margin: 0 0 1.4rem;
+}
+.section-label::before {
+  content: "// ";
+  color: var(--accent);
+}
+
+.section-tag {
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  color: var(--accent-blue);
+  opacity: 0.9;
+  margin: -0.9rem 0 1.8rem;
+}
+
+.section-lead {
+  margin: 0 0 2.4rem;
+}
+
+.whisper {
+  text-align: center;
+  font-size: 12.5px;
+  letter-spacing: 0.5px;
+  color: var(--text-faint);
+  font-style: italic;
+  margin: 2.6rem 0 0.4rem;
+  opacity: 0.8;
+}
+
+.entry {
+  margin: 0 0 2.4rem;
+}
+.entry:last-child {
+  margin-bottom: 0;
+}
+
+.entry-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.4rem 0.9rem;
+  margin: 0 0 0.7rem;
+}
+.entry-title {
+  color: var(--text-strong);
+  font-size: 15px;
+  font-weight: 500;
+}
+.entry-meta {
+  color: var(--accent);
+  font-size: 12.5px;
+}
+.entry-body {
+  margin: 0;
+}
+
+/* doodles — cute line-art scattered across the whole page */
+.page {
+  position: relative;
+  overflow: hidden;
+}
+.doodle-field {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+.doodle-spot {
+  position: absolute;
+  display: block;
+  color: #ffffff;
+}
+.doodle {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.wrap {
+  position: relative;
+  z-index: 1;
+}
+.foot-heart {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  vertical-align: -3px;
+  margin: 0 0.5rem;
+  color: var(--accent);
+}
+
+.contact-links {
+  margin: 1.6rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.contact-links a {
+  width: fit-content;
+}
+.contact-links .k {
+  color: var(--text-faint);
+  border: 0;
+  margin-right: 0.6rem;
+}
+
+.foot {
+  margin-top: clamp(3rem, 8vh, 5rem);
+  font-size: 12px;
+  color: var(--text-faint);
+}
+
+.blog-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+}
+.blog-list li {
+  margin: 0 0 1.9rem;
+}
+.post-link {
+  color: var(--text-strong);
+  font-size: 16px;
+  border-bottom: none;
+}
+.post-link:hover {
+  color: var(--accent);
+}
+.post-date {
+  color: var(--text-faint);
+  font-size: 12px;
+  display: block;
+  margin-top: 0.2rem;
+}
+.post-excerpt {
+  color: var(--text);
+  font-size: 13.5px;
+  line-height: 1.7;
+  margin: 0.5rem 0 0;
+}
+.more-link {
+  margin: 0.5rem 0 0;
+}
+.more-link a {
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  border-bottom: none;
+  color: var(--accent);
+}
+.post-title {
+  margin-top: 1.4rem;
+}
+.foot-sep {
+  margin: 0 0.7rem;
+  color: var(--line);
+}
+
+.post-body {
+  font-size: 15px;
+}
+.post-body h2 {
+  color: var(--text-strong);
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin: 2.6rem 0 0.9rem;
+}
+.post-body h3 {
+  color: var(--text-strong);
+  font-weight: 700;
+  font-size: 1.02rem;
+  margin: 2rem 0 0.7rem;
+}
+.post-body p {
+  margin: 0 0 1.15rem;
+}
+.post-body ul,
+.post-body ol {
+  margin: 0 0 1.15rem;
+  padding-left: 1.3rem;
+}
+.post-body li {
+  margin: 0 0 0.5rem;
+}
+.post-body a {
+  color: var(--accent-blue);
+}
+.post-body strong {
+  color: var(--text-strong);
+  font-weight: 700;
+}
+.post-body em {
+  color: var(--accent);
+  font-style: normal;
+}
+.post-body code {
+  color: var(--accent);
+  font-size: 13px;
+  background: #161618;
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+.post-body pre {
+  background: #141416;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 1rem 1.1rem;
+  overflow-x: auto;
+  margin: 0 0 1.3rem;
+}
+.post-body pre code {
+  background: none;
+  padding: 0;
+  color: var(--text);
+  line-height: 1.6;
+}
+.post-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 1.3rem;
+  font-size: 13.5px;
+}
+.post-body th,
+.post-body td {
+  border: 1px solid var(--line);
+  padding: 0.5rem 0.8rem;
+  text-align: left;
+}
+.post-body th {
+  color: var(--text-strong);
+  font-weight: 700;
+}
+
+.back {
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: var(--text-faint);
+}
