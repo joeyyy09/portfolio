@@ -1,7 +1,7 @@
 ---
 title: "why do ads never buffer? (and can our videos learn from them?)"
 date: "2025-01-26"
-excerpt: "why ads stream in crisp 1080p while your show buffers — and what video streaming can steal from ad tech."
+excerpt: "why ads stream in crisp 1080p while your show buffers, and what video streaming can steal from ad tech."
 url: "https://medium.com/@menteharshith/why-do-ads-never-buffer-and-can-our-videos-learn-from-them-cb1bb2121465"
 doodles: [gauge, wifi, server, cloud, bolt, network]
 ---

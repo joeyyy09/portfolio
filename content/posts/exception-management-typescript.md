@@ -1,7 +1,7 @@
 ---
 title: "navigating exception management in typescript"
 date: "2024-04-09"
-excerpt: "five hard-won rules for throwing, wrapping, and surviving errors in typescript without losing your stack trace."
+excerpt: "five hard won rules for throwing, wrapping, and surviving errors in typescript without losing your stack trace."
 url: "https://medium.com/tech-iiitg/navigating-through-exception-management-in-typescript-32f5239988a9"
 doodles: [bug, warning, shield, braces, code, terminal]
 ---

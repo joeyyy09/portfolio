@@ -58,7 +58,9 @@ export type DoodleName =
   | "shield"
   | "book"
   | "bulb"
-  | "compass";
+  | "compass"
+  | "wrench"
+  | "penguin";
 
 const glyphs: Record<DoodleName, ReactNode> = {
   ferrari: (
@@ -470,6 +472,23 @@ const glyphs: Record<DoodleName, ReactNode> = {
       <circle cx="50" cy="50" r="34" />
       <path d="M50 30 L60 50 L50 70 L40 50 Z" />
       <circle cx="50" cy="50" r="3" />
+    </>
+  ),
+  wrench: (
+    <>
+      <path d="M62 18 a18 18 0 0 0 -16 28 L20 72 a8 8 0 0 0 11 11 L57 57 a18 18 0 0 0 28 -16 l-14 8 l-10 -6 l-6 -10 z" />
+    </>
+  ),
+  penguin: (
+    <>
+      <path d="M30 60 q0 -22 20 -22 q20 0 20 22 q0 26 -20 26 q-20 0 -20 -26 z" />
+      <circle cx="50" cy="32" r="14" />
+      <ellipse cx="50" cy="66" rx="9" ry="16" />
+      <circle cx="45" cy="30" r="2" />
+      <circle cx="55" cy="30" r="2" />
+      <path d="M46 36 l4 5 l4 -5 z" />
+      <path d="M30 58 l-9 11 M70 58 l9 11" />
+      <path d="M40 88 q5 6 10 0 M50 88 q5 6 10 0" />
     </>
   ),
 };

@@ -1,7 +1,7 @@
 ---
 title: "read receipts 101: decoding the ticks"
 date: "2025-01-07"
-excerpt: "how whatsapp's blue ticks really work, and how i'd rebuild a real-time read-receipt system from scratch."
+excerpt: "how whatsapp's blue ticks really work, and how i'd rebuild a real time read receipt system from scratch."
 url: "https://medium.com/@menteharshith/read-receipts-101-decoding-the-ticks-57e7624e95d9"
 doodles: [chat, checks, database, wifi, lock, network]
 ---

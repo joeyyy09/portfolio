@@ -1,7 +1,7 @@
 ---
 title: "code crusade: a beginner's guide to development"
 date: "2024-03-13"
-excerpt: "a friendly, no-gatekeeping starter map for anyone taking their first steps into software development."
+excerpt: "a friendly, no gatekeeping starter map for anyone taking their first steps into software development."
 url: "https://medium.com/@menteharshith/code-crusade-your-ultimate-beginners-guide-to-development-5981fe248466"
 doodles: [rocket, bulb, book, compass, code, star]
 ---

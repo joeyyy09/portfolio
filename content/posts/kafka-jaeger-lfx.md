@@ -1,5 +1,5 @@
 ---
-title: "a kafka-fueled journey: my lfx mentorship with jaeger"
+title: "a kafka fuelled journey: my lfx mentorship with jaeger"
 date: "2024-09-01"
 excerpt: "my lfx mentorship with cncf jaeger: wiring kafka as a buffer between collector and ingester in jaeger v2."
 url: "https://medium.com/@menteharshith/a-kafka-fueled-journey-my-lfx-mentorship-experience-with-jaeger-633152397b4d"

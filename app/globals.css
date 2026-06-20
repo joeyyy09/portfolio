@@ -61,7 +61,30 @@ a:hover {
   font-size: 11px;
   letter-spacing: 2px;
   color: var(--text-faint);
+  margin: 0;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
   margin: 0 0 1.6rem;
+}
+.nav-link {
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  padding: 7px 16px;
+  white-space: nowrap;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.nav-link:hover {
+  color: var(--bg);
+  background: var(--accent);
+  border-color: var(--accent);
 }
 
 h1 {
@@ -94,6 +117,19 @@ h1 {
 
 .section {
   position: relative;
+}
+.section > *:not(.section-doodles) {
+  position: relative;
+  z-index: 1;
+}
+.section-doodles {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.section-doodles .doodle-spot {
+  color: #ffffff;
 }
 
 .section-label {
@@ -217,36 +253,68 @@ h1 {
   margin: 0.5rem 0 0;
 }
 .blog-list li {
-  margin: 0 0 1.9rem;
+  margin: 0 0 1rem;
 }
-.post-link {
+.post-card {
+  display: block;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 1.1rem 1.3rem 1.2rem;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.post-card:hover {
+  border-color: var(--accent);
+  background: #0d0d0d;
+}
+.post-card-title {
+  display: block;
   color: var(--text-strong);
   font-size: 16px;
-  border-bottom: none;
+  line-height: 1.4;
 }
-.post-link:hover {
+.post-card:hover .post-card-title {
   color: var(--accent);
 }
 .post-date {
   color: var(--text-faint);
   font-size: 12px;
   display: block;
-  margin-top: 0.2rem;
+  margin-top: 0.3rem;
 }
 .post-excerpt {
+  display: block;
   color: var(--text);
   font-size: 13.5px;
   line-height: 1.7;
-  margin: 0.5rem 0 0;
+  margin: 0.6rem 0 0;
+}
+.post-read {
+  display: inline-block;
+  margin-top: 0.8rem;
+  color: var(--accent);
+  font-size: 12px;
+  letter-spacing: 1px;
+  opacity: 0.6;
+  transition: opacity 0.15s ease;
+}
+.post-card:hover .post-read {
+  opacity: 1;
 }
 .more-link {
-  margin: 0.5rem 0 0;
+  margin: 1.4rem 0 0;
 }
 .more-link a {
   font-size: 13px;
   letter-spacing: 0.5px;
-  border-bottom: none;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  padding: 7px 16px;
   color: var(--accent);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.more-link a:hover {
+  color: var(--bg);
+  background: var(--accent);
 }
 .post-title {
   margin-top: 1.4rem;

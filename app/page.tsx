@@ -1,6 +1,7 @@
 import Link from "next/link";
-import Doodle from "@/components/Doodle";
+import Doodle, { type DoodleName } from "@/components/Doodle";
 import DoodleField from "@/components/DoodleField";
+import SectionDoodles from "@/components/SectionDoodles";
 import { hero, intro, introWhisper, sections, outro } from "@/content/bio";
 import { getAllPostMeta } from "@/lib/posts";
 
@@ -10,7 +11,12 @@ export default function Home() {
     <div className="page">
       <DoodleField />
       <main className="wrap">
-        <p className="eyebrow">＿ scroll ＿</p>
+        <div className="topbar">
+          <p className="eyebrow">＿ scroll ＿</p>
+          <Link className="nav-link" href="/blog/">
+            read my blogs ↗
+          </Link>
+        </div>
 
         <h1>{hero.title}</h1>
         <p className="tagline">{hero.tagline}</p>
@@ -27,6 +33,7 @@ export default function Home() {
 
         {sections.map((s) => (
           <section key={s.id} className="section" id={s.id}>
+            {s.doodles && <SectionDoodles names={s.doodles as DoodleName[]} />}
             <hr className="rule" />
             <p className="section-label">{s.label}</p>
             {s.tag && <p className="section-tag">{s.tag}</p>}
@@ -46,28 +53,33 @@ export default function Home() {
 
         {posts.length > 0 && (
           <section className="section" id="writing">
+            <SectionDoodles names={["book", "note", "bulb", "sparkle"]} />
             <hr className="rule" />
             <p className="section-label">the writing desk</p>
-            <p className="section-tag">things i think about, written down</p>
+            <p className="section-tag">things i think about, written down — tap any post to read</p>
             <ul className="blog-list measure">
               {posts.map((p) => (
                 <li key={p.slug}>
-                  <Link className="post-link" href={`/blog/${p.slug}/`}>
-                    {p.title}
+                  <Link className="post-card" href={`/blog/${p.slug}/`}>
+                    <span className="post-card-title">{p.title}</span>
+                    <span className="post-date">{p.date}</span>
+                    {p.excerpt && (
+                      <span className="post-excerpt">{p.excerpt}</span>
+                    )}
+                    <span className="post-read">read →</span>
                   </Link>
-                  <span className="post-date">{p.date}</span>
-                  {p.excerpt && <p className="post-excerpt">{p.excerpt}</p>}
                 </li>
               ))}
             </ul>
             <p className="more-link">
-              <Link href="/blog/">all writing →</Link>
+              <Link href="/blog/">read all posts →</Link>
             </p>
           </section>
         )}
 
         <hr className="rule" />
         <section className="section">
+          <SectionDoodles names={["heart", "sparkle", "star", "chat"]} />
           <p className="section-label">{outro.label}</p>
           {outro.tag && <p className="section-tag">{outro.tag}</p>}
           <p className="section-lead measure">{outro.body}</p>
@@ -87,7 +99,7 @@ export default function Home() {
           <span className="foot-heart" aria-label="love">
             <Doodle name="heart" />
           </span>
-          built with code &amp; caffeine in bengaluru
+          coded in bengaluru, between ferrari race weekends, ukulele chords &amp; far too much biryani
         </p>
       </main>
     </div>

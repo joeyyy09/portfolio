@@ -1,7 +1,7 @@
 ---
 title: "cracking the code: the tech behind qr payments"
 date: "2025-03-08"
-excerpt: "what actually happens when you scan a upi qr code — encoding, error correction, and a number bigger than the atoms in the universe."
+excerpt: "what actually happens when you scan a upi qr code: encoding, error correction, and a number bigger than the atoms in the universe."
 url: "https://medium.com/@menteharshith/cracking-the-code-the-tech-behind-qr-payments-explained-67f76b8ccfa6"
 doodles: [qr, rupee, phone, lock, network, wifi]
 ---
