@@ -14,7 +14,24 @@ export async function generateMetadata({
   params: { slug: string };
 }) {
   const post = await getPost(params.slug);
-  return { title: post ? `${post.title} — harshith mente` : "not found" };
+  if (!post) return { title: "not found · harshith mente" };
+  const url = `https://harshithmente.vercel.app/blog/${post.slug}/`;
+  return {
+    title: `${post.title} · harshith mente`,
+    description: post.excerpt,
+    alternates: { canonical: url },
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      type: "article",
+      url,
+    },
+    twitter: {
+      card: "summary",
+      title: post.title,
+      description: post.excerpt,
+    },
+  };
 }
 
 export default async function PostPage({
